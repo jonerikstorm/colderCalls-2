@@ -1,0 +1,112 @@
+<html lang="en-us">
+<head>
+    <title>colderCalls</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="colderCall2.js"></script>
+</head>
+<body>
+<div class="container-fluid p-5 my-1 border">
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron-block" id="selectedStudentJumbotron" style="font-size: 10vw;text-align: center">
+                Cold Called!
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-12" id="wrongRightButtons">
+            <div class="d-flex btn-group-lg w-auto">
+                <button type="button" class="mx-1 btn col-3 flex-fill btn-success" id="correctButton">Correct</button>
+                <button type="button" class="mx-1 btn col-3 flex-fill btn-secondary" id="skipButton">Skip</button>
+                <button type="button" class="mx-1 btn col-3 flex-fill btn-danger" id="incorrect">Incorrect</button>
+            </div>
+        </div>
+        <div class="col-lg-12" id="rubricButtons">
+            <div class="d-flex flex-row btn-group-lg w-auto">
+                <button type="button" class="mx-1 btn col-1 flex-fill btn-secondary" id="skipRubricButton">Skip</button>
+                <button type="button" class="mx-1 btn col-2 flex-fill btn-danger" id="rubric1Button">1</button>
+                <button type="button" class="mx-1 btn col-2 flex-fill btn-warning" id="rubric2Button">2</button>
+                <button type="button" class="mx-1 btn col-2 flex-fill btn-warning" id="rubric3Button">3</button>
+                <button type="button" class="mx-1 btn col-2 flex-fill btn-success" id="rubric4Button">4</button>
+                <button type="button" class="mx-1 btn col-2 flex-fill btn-success" id="rubric5Button">5</button>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-1">
+        <div class="col-9">
+            <div class="btn-group flex-row">
+                <button type="button" class="btn btn-primary" id="tableButton">Students</button>
+                <button type="button" class="btn btn-primary" id="prefsButton">Options</button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Periods
+                    </button>
+                    <div class="dropdown-menu" id="periodDropDownMenu"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="d-flex btn-group">
+                <button class="btn btn-outline-danger mx-1" id="absentButton" type="button">Mark Absent</button>
+                <button class="btn btn-outline-info" id="timer" type="button" disabled>0:00</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" id="statusBar"></div>
+    </div>
+    <div class="row">
+        <div class="col" id="prefsContent">
+            <ul class="nav nav-tabs" id="prefsTabs">
+            </ul>
+            <div class="tab-content" id="prefsTabsContent">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive border" id="bigTable">
+                <table class="table table-hover">
+                    <thead class="thead-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Bias</th>
+                        <th>% Correct</th>
+                        <th>Rubric Average</th>
+                        <th>Absent</th>
+                        <th>Enabled</th>
+                    </tr>
+                    </thead>
+                    <tbody id="studentTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="preferencesModal">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title">Modal Heading</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+            Modal body..
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

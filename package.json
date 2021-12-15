@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@types/bootstrap": "^5.1.6",
+    "@types/gapi.client.classroom": "^1.0.13",
+    "@types/jquery": "^3.5.10"
+  },
+  "dependencies": {
+    "@types/gapi.auth2": "^0.0.55"
+  }
+}
