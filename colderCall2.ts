@@ -49,3 +49,12 @@
 // Export results to Google Classroom
 // Export results to CSV
 // Export results to email
+//import "./google-interface";
+//import "./random";
+$(function () {
+    // load preferences
+    $("#bigTable").hide();
+    $("#rubricButtons").hide();
+    $("#optionsButton").on("click",function () { $("#preferencesModal").modal("show");});
+    $("#tableButton").on("click", function () { $("#bigTable").toggle();});
+});
