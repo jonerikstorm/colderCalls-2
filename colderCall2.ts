@@ -78,6 +78,8 @@ interface Students
     correct:Answer[];
     answered:Answer[];
     rubricScore:Rubric[];
+    absent:Date[];
+    enabled:boolean;
 }
 interface DataBase
 {
@@ -104,4 +106,24 @@ $(function () {
     $("#rubricButtons").hide();
     $("#optionsButton").on("click",function () { $("#preferencesModal").modal("show");});
     $("#tableButton").on("click", function () { $("#bigTable").toggle();});
+    let t:number = 1;
+    setInterval(function () {
+        $("#timer").text(t);
+        t++;
+    }
+    , 1000);
+    $("#correctButton").on("click", function () { 
+    $("#selectedStudentJumbotron").text("FUCKER");
+    console.log("Fucker fired");
+}
+);
+$("#incorrectButton").on("click", function () { 
+    $("#selectedStudentJumbotron").text("LOSER");
+    console.log("Loser fired");
+}
+);
+$("#skipButton").on("click", function () {
+    console.log("Skip fired");
+}
+);
 });
