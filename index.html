@@ -91,8 +91,38 @@
         </div>
         <!-- Modal body -->
         <div class="modal-body">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="volunteerOption" name="option1" value="ok" checked>Include a volunteer?</input>
+                <label class="form-check-label"></label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="rubricOnLaunchOption" name="option1" value="ok" checked>Use rubric scoring on launch?</input>
+                <label class="form-check-label"></label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="timerOnLaunchOption" name="option1" value="ok" checked>Start timer on launch?</input>
+                <label class="form-check-label"></label>
+            </div>
+            Display Name As:
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="check1" name="option1" value="ok" checked>Include a volunteer?</div>
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>First, Last
+                <label class="form-check-label" for="radio1"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2"> F., Last
+                <label class="form-check-label" for="radio2"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" disabled>First, L.
+                <label class="form-check-label"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" disabled>First only
+                <label class="form-check-label"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" disabled>Last only
+                <label class="form-check-label"></label>
             </div>
         </div>
         <!-- Modal footer -->
@@ -100,5 +130,6 @@
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         </div>
     </div>
+</div>
 </body>
 </html>
