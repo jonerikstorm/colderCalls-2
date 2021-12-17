@@ -2,11 +2,6 @@
 "use strict";
 // If we can't find it, ask if we want to create a new database or try and find it.
 // Open file picker.
-// Create new Google Sheet with the name 'colderCall'
-// Create a sheet entitled global, a sheet entitled periods, and a sheet entitled students
-// TODO: Further data model elaboration.
-
-// Load the entire file into a class
 
 // TODO: function to write entire active class to the file
 
@@ -51,8 +46,60 @@
 // Export results to email
 //import "./google-interface";
 //import "./random";
+interface Log
+{
+    timestamp:string;
+    level:string;
+    message:string;
+}
+interface Period
+{
+    name:string;
+    startTime:string;
+    endTime:string;
+    volunteer:boolean;
+    periodNumber:string;
+    rubricMax:number;
+    queueLength:number;
+}
+interface Answer {
+    date:String;
+}
+interface Rubric {
+    date:String;
+    score:number;
+}
+interface Students
+{
+    firstName:string;
+    lastName:string;
+    email:string;
+    biasFactor:number;
+    correct:Answer[];
+    answered:Answer[];
+    rubricScore:Rubric[];
+}
+interface DataBase
+{
+    defaultPeriod:number;
+    displayName:string;
+    tableOn:boolean;
+    timerOn:boolean;
+    rubricDefault:boolean;
+    classes:Period[];
+    students:Students[];
+    log:Log[];
+}
+
 $(function () {
+    let data:DataBase;
     // load preferences
+    // if we are in google, we will do this:
+    // google.script.run.getData();
+    // if we are self-hosted, we will do this:
+    // AJAX put /colderCall.go which will call 
+    // temporary testing class
+
     $("#bigTable").hide();
     $("#rubricButtons").hide();
     $("#optionsButton").on("click",function () { $("#preferencesModal").modal("show");});

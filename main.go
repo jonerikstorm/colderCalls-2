@@ -11,6 +11,6 @@ func Server(w http.ResponseWriter, r *http.Request) {
 }
 func main() {
 	serverHandler := http.HandlerFunc(Server)
-	go http.Handle("/", serverHandler)
+	go http.Handle("/colderCall.go", serverHandler)
 	log.Fatal(http.ListenAndServe(":8090", nil))
 }
